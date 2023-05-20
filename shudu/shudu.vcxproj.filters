@@ -27,6 +27,9 @@
     <ClCompile Include="gen_final.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="solve.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="getopt.h">

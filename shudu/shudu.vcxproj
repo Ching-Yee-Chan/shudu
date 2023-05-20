@@ -143,6 +143,7 @@
     <ClCompile Include="getopt.cpp" />
     <ClCompile Include="progress.cpp" />
     <ClCompile Include="shudu.cpp" />
+    <ClCompile Include="solve.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="getopt.h" />

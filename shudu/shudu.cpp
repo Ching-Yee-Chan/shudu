@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
             getFinal(num);
             break;
         case 's':
+            solve(optarg);
             break;
         case 'n':
             break;
