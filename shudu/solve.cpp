@@ -107,6 +107,7 @@ struct sudoku {
             }
         }
         //coords pushed back here
+        //test
         remove(coord.first, coord.second);
         return -1;
     }
