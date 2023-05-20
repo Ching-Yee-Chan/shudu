@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gen_final.cpp" />
     <ClCompile Include="getopt.cpp" />
     <ClCompile Include="progress.cpp" />
     <ClCompile Include="shudu.cpp" />
@@ -146,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="getopt.h" />
     <ClInclude Include="progress.h" />
+    <ClInclude Include="shudu.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
