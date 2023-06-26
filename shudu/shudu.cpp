@@ -46,6 +46,11 @@ int main(int argc, char* argv[]) {
             getGameBySpace(num_games, space);
             break;
         case 'u':
+            if (num_games < 0) {
+                cout << "please input the number of games!" << endl;
+                break;
+            }
+            getGameUnique(num_games);
             break;
         default:
             cout << "参数错误！不存在参数" << (char)opt << "!" << endl;

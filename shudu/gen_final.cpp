@@ -39,7 +39,7 @@ inline void outputG(fstream& f, int* line, int* offset, int* mask, int spaces) {
         else
             f << '$';
         for (int j = start + 1; j < start + 9; j++) {
-            if (mask[j % 9]&& colMask[i] != j%9)
+            if (mask[j % 9]&&(colMask[i] != j%9|| !colMask[i]))
                 f << " " << line[j % 9];
             else
                 f << " " << '$';
@@ -233,3 +233,5 @@ void getGameBySpace(int num, int spaces) {
         }
     }
 }
+
+
