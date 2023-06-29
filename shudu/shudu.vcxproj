@@ -81,6 +81,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -145,10 +147,12 @@
     <ClCompile Include="progress.cpp" />
     <ClCompile Include="shudu.cpp" />
     <ClCompile Include="solve.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="getopt.h" />
     <ClInclude Include="progress.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="shudu.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>

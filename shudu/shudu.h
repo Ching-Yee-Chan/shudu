@@ -1,4 +1,7 @@
 
+#pragma once
+#include"getopt.h"
+#include"progress.h"
 #include<iostream>
 #include<fstream>
 #include<algorithm>
@@ -6,16 +9,15 @@
 #include<assert.h>
 using namespace std;
 
-#pragma once
 //gen_final.cpp
 void getFinal(int num);
 void getGameByLevel(int num, int level);
 void getGameBySpace(int num, int space);
 void getGameUnique(int num);
 //solve.cpp
-void solve(char* filename);
-
-
+int solve(char* filename);
+//shudu.cpp
+int exec_sudoku(int argc, char* argv[]);
 
 struct sudoku {
     int matrix[9][9] = { 0 };
@@ -207,3 +209,9 @@ struct sudoku {
         }
     }
 };
+
+
+
+
+
+

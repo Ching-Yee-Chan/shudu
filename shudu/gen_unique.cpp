@@ -1,15 +1,9 @@
-#include<iostream>
-#include<fstream>
-#include<algorithm>
-#include"progress.h"
 #include"shudu.h"
 using namespace std;
 
 
-
-
 void getGameUnique(int num) {
-	getFinal(num);
+    getFinal(num);
     fstream infile("final.txt", ios::in);
     fstream outfile("uniqueGames.txt", ios::out);
     if (!infile.is_open()) {
@@ -24,3 +18,4 @@ void getGameUnique(int num) {
         board.output(outfile);
     }
 }
+
