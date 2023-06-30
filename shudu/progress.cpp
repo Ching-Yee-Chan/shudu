@@ -6,7 +6,7 @@ void ProgressBar::start() {
 	this->beginTime = steady_clock::now();
 	this->lastTime = this->beginTime;
 	// 定时器用于定时调用重绘函数
-	this->timer.start(this->interval.count(), std::bind(&ProgressBar::show, this));
+	this->timer.start((int)this->interval.count(), std::bind(&ProgressBar::show, this));
 }
 
 // 重绘函数
@@ -29,15 +29,15 @@ void ProgressBar::show() {
 	// 打印百分数
 	std::cout << std::setprecision(1) << std::fixed << present << "%|";
 	// 计算应该绘制多少=符号
-	int barWidth = present * this->colsRatio;
+	int barWidth = (int)(present * this->colsRatio);
 	// 打印已完成和未完成进度条
 	std::cout << std::setw(barWidth) << std::setfill('=') << "=";
-	std::cout << std::setw(this->ncols - barWidth) << std::setfill(' ') << "|";
+	std::cout << std::setw((int)this->ncols - barWidth) << std::setfill(' ') << "|";
 
 	// 打印速度
 	std::cout << std::setprecision(1) << std::fixed << rate << "op/s|";
 	// 之后的两部分内容分别为打印已过的时间和剩余时间
-	int timeFromStartCount = duration<double>(timeFromStart).count();
+	int timeFromStartCount = (int)duration<double>(timeFromStart).count();
 
 	std::time_t tfs = timeFromStartCount;
 	tm tmfs;
@@ -47,7 +47,7 @@ void ProgressBar::show() {
 	int timeLast;
 	if (rate != 0) {
 		// 剩余时间的估计是用这次的速度和未完成的数量进行估计
-		timeLast = (this->totalNum - tmpFinished) / rate;
+		timeLast =(int)((this->totalNum - tmpFinished) / rate);
 	}
 	else {
 		timeLast = INT_MAX;

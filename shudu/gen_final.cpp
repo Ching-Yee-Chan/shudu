@@ -1,9 +1,6 @@
-#include<iostream>
-#include<fstream>
-#include<algorithm>
-#include"progress.h"
 #include"shudu.h"
 using namespace std;
+
 
 inline void output(fstream& f, int* line, int* offset) {
     for (int i = 0; i < 9; i++) {
@@ -20,7 +17,7 @@ inline void output(fstream& f, int* line, int* offset) {
 inline void outputG(fstream& f, int* line, int* offset, int* mask, int spaces) {
     //0代表不挖空， n代表在第几列挖空
     int colMask[9] = { 0 };
-    
+
     for (int i = 0; i < spaces; i++) {
         do {
             int s = rand() % 9;
@@ -39,7 +36,7 @@ inline void outputG(fstream& f, int* line, int* offset, int* mask, int spaces) {
         else
             f << '$';
         for (int j = start + 1; j < start + 9; j++) {
-            if (mask[j % 9]&&(colMask[i] != j%9|| !colMask[i]))
+            if (mask[j % 9] && (colMask[i] != j % 9 || !colMask[i]))
                 f << " " << line[j % 9];
             else
                 f << " " << '$';
@@ -50,10 +47,6 @@ inline void outputG(fstream& f, int* line, int* offset, int* mask, int spaces) {
 }
 
 void getFinal(int num) {
-    if (num < 1 || num>1e6) {
-        cout << "生成失败！数独终盘数量须在1~1000000之间！" << endl;
-        return;
-    }
     cout << "开始生成" << num << "个数独终盘！" << endl;
 
     //Initialize prgress bar
@@ -233,5 +226,4 @@ void getGameBySpace(int num, int spaces) {
         }
     }
 }
-
 
