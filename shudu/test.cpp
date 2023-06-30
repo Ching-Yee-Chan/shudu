@@ -1,8 +1,5 @@
 #include "pch.h"
 
-TEST(TestFinal, testFinalPos) {
-	char* argv2[10] = { "test", "-c", "1000000" };
-}
 
 TEST(TestFinal, testFinalNeg1) {
 	char* argv1[10] = { "test", "-c", "-1" };

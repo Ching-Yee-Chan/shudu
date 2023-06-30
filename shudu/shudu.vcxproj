@@ -147,7 +147,9 @@
     <ClCompile Include="progress.cpp" />
     <ClCompile Include="shudu.cpp" />
     <ClCompile Include="solve.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="getopt.h" />
